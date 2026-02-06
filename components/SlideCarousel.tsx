@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { SlideItem, MediaType } from '../types';
 import PrayerTimesSlide from './PrayerTimesSlide';
+import ImageSlide from './ImageSlide';
 
 interface SlideCarouselProps {
   items: SlideItem[];
@@ -100,13 +101,18 @@ const SlideCarousel: React.FC<SlideCarouselProps> = ({ items }) => {
           </div>
         ) : currentItem.type === MediaType.PRAYER_TABLE ? (
           <PrayerTimesSlide data={currentItem.data} showSilenceMessage={showSilence} />
-        ) : (
-          <img
-            key={currentItem.url}
-            src={currentItem.url}
-            className="w-full h-full object-cover"
-            onError={handleMediaError}
+        ) : currentItem.type === MediaType.IMAGE ? (
+          <ImageSlide
+            url={currentItem.url || 'https://images.unsplash.com/photo-1506744038136-46273834b3fb'}
+            title={currentItem.title}
+            description={currentItem.description}
+            showTitle={true}
+            showDescription={true}
           />
+        ) : (
+          <div className="w-full h-full flex items-center justify-center bg-zinc-950 p-10">
+            <h2 className="text-zinc-600 text-3xl font-bold uppercase tracking-widest mb-4">Unsupported Slide Type</h2>
+          </div>
         )}
       </div>
     </div>
