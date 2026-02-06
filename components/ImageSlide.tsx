@@ -14,7 +14,7 @@ const ImageSlide: React.FC<ImageSlideProps> = ({ url, title, description, showTi
       <img
         src={url}
         alt={title || 'Slide Image'}
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 w-full h-full object-fill"
         style={{ maxHeight: '100%', maxWidth: '100%' }}
       />
       {(showTitle && title) && (

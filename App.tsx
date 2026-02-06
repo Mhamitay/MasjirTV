@@ -5,10 +5,15 @@ import NewsTicker from './components/NewsTicker';
 import { GALLERY_IMAGES, MOCK_NEWS, CALGARY_PRAYER_SCHEDULE } from './services/mockData';
 import { fetchCICSWPrayerData, formatPrayerTicker } from './services/prayerService';
 import { NewsItem, PrayerSchedule, MediaType, SlideItem } from './types';
+import WelcomeSlide from './components/WelcomeSlide';
+import BookingSlide from './components/BookingSlide';
+import AnnouncementSlide from './components/AnnouncementSlide';
 
 const App: React.FC = () => {
   const [newsItems, setNewsItems] = useState<NewsItem[]>(MOCK_NEWS);
   const [prayerData, setPrayerData] = useState<PrayerSchedule | null>(null);
+  const [newsBarVisible, setNewsBarVisible] = useState(true);
+  const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
 
   // Combine dynamic prayer slide with gallery images
   const allMediaItems = useMemo(() => {
@@ -22,10 +27,39 @@ const App: React.FC = () => {
       source: prayerData ? 'CICSW Live' : 'Calgary Template',
       data: prayerData || CALGARY_PRAYER_SCHEDULE
     });
+    // Add custom React slides
+    items.push({
+      id: 'welcome-slide',
+      type: MediaType.CUSTOM_PAGE,
+      duration: 10000,
+      source: 'Local',
+      component: WelcomeSlide
+    });
+    items.push({
+      id: 'booking-slide',
+      type: MediaType.CUSTOM_PAGE,
+      duration: 10000,
+      source: 'Local',
+      component: BookingSlide,
+      hideNewsBar: true
+    });
+    items.push({
+      id: 'announcement-slide',
+      type: MediaType.CUSTOM_PAGE,
+      duration: 10000,
+      source: 'Local',
+      component: AnnouncementSlide
+    });
     // Add rest of the gallery
     items.push(...GALLERY_IMAGES);
     return items;
   }, [prayerData]);
+
+  // Listen for slide changes and update news bar visibility
+  useEffect(() => {
+    const currentSlide = allMediaItems[currentSlideIndex];
+    setNewsBarVisible(currentSlide?.hideNewsBar ? false : true);
+  }, [currentSlideIndex, allMediaItems]);
 
   useEffect(() => {
     const updatePrayerTimes = async () => {
@@ -57,9 +91,10 @@ const App: React.FC = () => {
     return () => clearInterval(interval);
   }, []);
 
+  // (Removed timer-based hiding logic. News bar visibility is only controlled by hideNewsBar property of the current slide.)
+
   return (
-    <div className="h-screen w-screen bg-black overflow-hidden select-none flex flex-col relative">
-      
+    <div className="h-screen w-screen bg-black overflow-hidden select-none relative">
       {/* Persistent Logo Overlay */}
       <div className="absolute top-10 left-12 z-[100] pointer-events-none animate-[fadeIn_1.5s_ease-out]">
         <img 
@@ -73,14 +108,23 @@ const App: React.FC = () => {
         />
       </div>
 
-      {/* Content area */}
-      <main className="flex-grow relative overflow-hidden">
-        <SlideCarousel items={allMediaItems} />
-      </main>
+      {/* Main content area, always fills screen */}
+      <div
+        className="absolute top-0 left-0 w-full transition-all duration-700"
+        style={{ height: newsBarVisible ? 'calc(100vh - 120px)' : '100vh', bottom: newsBarVisible ? '120px' : '0' }}
+      >
+        <SlideCarousel
+          items={allMediaItems}
+          onSlideChange={setCurrentSlideIndex}
+        />
+      </div>
 
-      {/* Footer area */}
-      <footer className="h-[120px] flex-shrink-0 z-50">
-        <NewsTicker news={newsItems} />
+      {/* News bar slides down/up, overlays bottom */}
+      <footer
+        className={`absolute left-0 w-full h-[120px] z-50 transition-transform duration-700 ${newsBarVisible ? 'translate-y-0' : 'translate-y-full'}`}
+        style={{ bottom: 0 }}
+      >
+        <NewsTicker news={newsItems} scrollSpeed={20} />
       </footer>
     </div>
   );

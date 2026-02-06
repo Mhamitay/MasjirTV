@@ -26,6 +26,7 @@ export interface SlideItem {
   source: string; // Origin identifier for verification
   data?: any; // For custom component data
   component?: React.ComponentType<any>; // For custom React pages
+  hideNewsBar?: boolean; // Optional: hide news bar when this slide is active
 }
 
 export interface NewsItem {

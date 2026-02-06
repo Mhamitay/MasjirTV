@@ -38,7 +38,8 @@ export const GALLERY_IMAGES: SlideItem[] = [
     duration: 8000,
     title: 'Please Silence Your Mobile Device',
     description: 'Reminder for attendees.',
-    source: 'Ministry Pass'
+    source: 'Ministry Pass',
+    hideNewsBar: true
   },
   {
     id: 'g2',
@@ -47,7 +48,8 @@ export const GALLERY_IMAGES: SlideItem[] = [
     duration: 8000,
     title: 'Collaborative Spaces',
     description: 'Enhancing productivity through design.',
-    source: 'Local Folder'
+    source: 'Local Folder',
+    hideNewsBar: true
   },
   {
     id: 'g3',

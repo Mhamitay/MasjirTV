@@ -4,6 +4,7 @@ import { NewsItem } from '../types';
 
 interface NewsTickerProps {
   news: NewsItem[];
+  scrollSpeed?: number; // in seconds
 }
 
 const CATEGORY_CONFIG: Record<string, { label: string; color: string; bg: string; border: string }> = {
@@ -45,7 +46,7 @@ const CATEGORY_CONFIG: Record<string, { label: string; color: string; bg: string
   }
 };
 
-const NewsTicker: React.FC<NewsTickerProps> = ({ news }) => {
+const NewsTicker: React.FC<NewsTickerProps> = ({ news, scrollSpeed = 20 }) => {
   const [currentCategoryIndex, setCurrentCategoryIndex] = useState(0);
 
   const groupedNews = useMemo(() => {
@@ -95,8 +96,7 @@ const NewsTicker: React.FC<NewsTickerProps> = ({ news }) => {
         <div 
           key={activeCategory} // Force re-animation on category change
           className="animate-marquee whitespace-nowrap flex items-center" 
-          // Faster scrolling: Prayer (15s), Others (26s)
-          style={{ animationDuration: activeCategory === 'PRAYER' ? '15s' : '26s' }}
+          style={{ animationDuration: `${scrollSpeed}s` }}
         >
           {/* First set of items */}
           {activeItems.map((item) => (

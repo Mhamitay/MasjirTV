@@ -6,10 +6,11 @@ import ImageSlide from './ImageSlide';
 
 interface SlideCarouselProps {
   items: SlideItem[];
+  onSlideChange?: (index: number) => void;
 }
 
 
-const SlideCarousel: React.FC<SlideCarouselProps> = ({ items }) => {
+const SlideCarousel: React.FC<SlideCarouselProps> = ({ items, onSlideChange }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [mediaError, setMediaError] = useState<{message: string, code?: number} | null>(null);
@@ -66,9 +67,11 @@ const SlideCarousel: React.FC<SlideCarouselProps> = ({ items }) => {
     timerRef.current = setTimeout(() => {
       setIsTransitioning(true);
       setTimeout(() => {
-        setCurrentIndex((prev) => (prev + 1) % items.length);
+        const nextIndex = (currentIndex + 1) % items.length;
+        setCurrentIndex(nextIndex);
         setIsTransitioning(false);
         setMediaError(null);
+        if (onSlideChange) onSlideChange(nextIndex);
       }, 800);
     }, currentItem.duration || 10000);
 
@@ -84,9 +87,11 @@ const SlideCarousel: React.FC<SlideCarouselProps> = ({ items }) => {
     timerRef.current = setTimeout(() => {
       setIsTransitioning(true);
       setTimeout(() => {
-        setCurrentIndex((prev) => (prev + 1) % items.length);
+        const nextIndex = (currentIndex + 1) % items.length;
+        setCurrentIndex(nextIndex);
         setIsTransitioning(false);
         setMediaError(null);
+        if (onSlideChange) onSlideChange(nextIndex);
       }, 800);
     }, 5000);
   };
@@ -109,6 +114,8 @@ const SlideCarousel: React.FC<SlideCarouselProps> = ({ items }) => {
             showTitle={true}
             showDescription={true}
           />
+        ) : currentItem.type === MediaType.CUSTOM_PAGE && currentItem.component ? (
+          <currentItem.component />
         ) : (
           <div className="w-full h-full flex items-center justify-center bg-zinc-950 p-10">
             <h2 className="text-zinc-600 text-3xl font-bold uppercase tracking-widest mb-4">Unsupported Slide Type</h2>
