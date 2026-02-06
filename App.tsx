@@ -12,19 +12,20 @@ const App: React.FC = () => {
 
   // Combine dynamic prayer slide with gallery images
   const allMediaItems = useMemo(() => {
-    // Show only the sample image slide for testing
-    return [
-      {
-        id: 'sample-image',
-        type: MediaType.IMAGE,
-        url: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb',
-        duration: 8000,
-        title: 'Sample Image',
-        description: 'This is a test slide with overlays.',
-        source: 'Unsplash'
-      }
-    ];
-  }, []);
+    const items: SlideItem[] = [];
+    // Always show a prayer slide: use live data if available, else fallback
+    items.push({
+      id: 'prayer-slide',
+      type: MediaType.PRAYER_TABLE,
+      url: 'custom://prayer-table',
+      duration: 15000, // Show for 15 seconds
+      source: prayerData ? 'CICSW Live' : 'Calgary Template',
+      data: prayerData || CALGARY_PRAYER_SCHEDULE
+    });
+    // Add rest of the gallery
+    items.push(...GALLERY_IMAGES);
+    return items;
+  }, [prayerData]);
 
   useEffect(() => {
     const updatePrayerTimes = async () => {

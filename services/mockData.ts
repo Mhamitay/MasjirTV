@@ -14,6 +14,15 @@ export const CALGARY_PRAYER_SCHEDULE = {
 
 export const GALLERY_IMAGES: SlideItem[] = [
   {
+    id: 'sample-image',
+    type: MediaType.IMAGE,
+    url: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb',
+    duration: 8000,
+    title: 'Sample Image',
+    description: 'This is a test slide with overlays.',
+    source: 'Unsplash'
+  },
+  {
     id: 'g1',
     type: MediaType.IMAGE,
     url: 'https://images.unsplash.com/photo-1609599006353-e629aaabfeae?auto=format&fit=crop&q=80&w=1920&h=1080',
@@ -22,15 +31,15 @@ export const GALLERY_IMAGES: SlideItem[] = [
     description: 'Recent highlights from our library.',
     source: 'Cloud Assets'
   },
-    {
-      id: 'g4',
-      type: MediaType.IMAGE,
-      url: 'https://ministrypass-prod.s3.amazonaws.com/uploads/2019/04/Please-Silence-Your-Mobile-Device-Minimalist_Title-Slide-1.jpg',
-      duration: 8000,
-      title: 'Please Silence Your Mobile Device',
-      description: 'Reminder for attendees.',
-      source: 'Ministry Pass'
-    },
+  {
+    id: 'g4',
+    type: MediaType.IMAGE,
+    url: 'https://ministrypass-prod.s3.amazonaws.com/uploads/2019/04/Please-Silence-Your-Mobile-Device-Minimalist_Title-Slide-1.jpg',
+    duration: 8000,
+    title: 'Please Silence Your Mobile Device',
+    description: 'Reminder for attendees.',
+    source: 'Ministry Pass'
+  },
   {
     id: 'g2',
     type: MediaType.IMAGE,
