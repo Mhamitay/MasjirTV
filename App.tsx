@@ -28,7 +28,8 @@ const App: React.FC = () => {
       url: 'custom://prayer-table',
       duration: 15000, // Show for 5 seconds
       source: prayerData ? 'CICSW Live' : 'Calgary Template',
-      data: prayerData || CALGARY_PRAYER_SCHEDULE
+      data: prayerData || CALGARY_PRAYER_SCHEDULE,
+      hideNewsBar: true
     });
     // Add custom React slides
     items.push({
