@@ -348,7 +348,7 @@ const PrayerTimesSlide: React.FC<PrayerTimesSlideProps> = ({ data, showSilenceMe
               key={prayer.name}
               className={`${
                 prayer.name === countdown.name ? 'bg-[#c99456]' : 'bg-[#4a8577]'
-              } rounded-xl p-4 shadow-xl transition-transform hover:scale-[1.02]`}
+              } rounded-xl p-2 shadow-xl transition-transform hover:scale-[1.02]`}
             >
               <div className="grid grid-cols-[2fr_1fr_1fr] gap-4 items-center">
                 {/* Prayer Name and Icon */}
@@ -358,16 +358,16 @@ const PrayerTimesSlide: React.FC<PrayerTimesSlideProps> = ({ data, showSilenceMe
                 </div>
                 
                 {/* Adan Time */}
-                <div className="bg-white/20 rounded-lg px-5 py-4">
-                  <span className="text-white text-4xl font-black tracking-tighter tabular-nums">
+                <div className="bg-white/20 rounded-lg px-8 py-4 min-w-[200px]">
+                  <span className="text-white text-4xl font-black tracking-tighter tabular-nums whitespace-nowrap">
                     {prayer.adhan}
                   </span>
                 </div>
                 
                 {/* Iqama Time */}
                 {prayer.iqama ? (
-                  <div className="bg-white/30 rounded-lg px-5 py-4">
-                    <span className="text-white text-4xl font-black tracking-tighter tabular-nums">
+                  <div className="bg-white/30 rounded-lg px-8 py-4 min-w-[200px]">
+                    <span className="text-white text-4xl font-black tracking-tighter tabular-nums whitespace-nowrap">
                       {prayer.iqama}
                     </span>
                   </div>
