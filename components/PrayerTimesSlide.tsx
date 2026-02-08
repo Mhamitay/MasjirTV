@@ -323,8 +323,7 @@ const PrayerTimesSlide: React.FC<PrayerTimesSlideProps> = ({ data, showSilenceMe
       </div>
 
       <header className="text-center mb-2 relative z-10">
-        <h1 className="text-[#2d5f4f] text-4xl font-black tracking-tight mb-1">Prayer Times</h1>
-        <p className="text-[#2d5f4f]/70 text-base font-semibold tracking-wide">Al Azhar Youth Centre</p>
+        <h1 className="text-[#2d5f4f] text-4xl font-black tracking-tight">Prayer Times</h1>
       </header>
 
       {/* Prayer Times Table */}
@@ -332,13 +331,13 @@ const PrayerTimesSlide: React.FC<PrayerTimesSlideProps> = ({ data, showSilenceMe
         {/* Header Row */}
         <div className="grid grid-cols-[2fr_1fr_1fr] gap-3 mb-2 px-3">
           <div>
-            <span className="text-[#2d5f4f] text-lg font-bold uppercase tracking-wider">Athan</span>
+            <span className="text-[#2d5f4f] text-xl font-bold uppercase tracking-wider">Athan</span>
           </div>
           <div className="text-center">
-            <span className="text-[#2d5f4f] text-lg font-bold uppercase tracking-wider">Adan</span>
+            <span className="text-[#2d5f4f] text-xl font-bold uppercase tracking-wider">Adan</span>
           </div>
           <div className="text-center">
-            <span className="text-[#2d5f4f] text-lg font-bold uppercase tracking-wider">Iqama</span>
+            <span className="text-[#2d5f4f] text-xl font-bold uppercase tracking-wider">Iqama</span>
           </div>
         </div>
 
