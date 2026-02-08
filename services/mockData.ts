@@ -32,17 +32,16 @@ export const GALLERY_IMAGES: SlideItem[] = [
   //   description: 'Recent highlights from our library.',
   //   source: 'Cloud Assets'
   // },
-  // {
-  //   id: 'g4',
-  //   type: MediaType.IMAGE,
-  //   url: 'https://ministrypass-prod.s3.amazonaws.com/uploads/2019/04/Please-Silence-Your-Mobile-Device-Minimalist_Title-Slide-1.jpg',
-  //   duration: 8000,
-  //   title: 'Please Silence Your Mobile Device',
-  //   description: 'Reminder for attendees.',
-  //   source: 'Ministry Pass',
-  //   hideNewsBar: true
-  // },
-  // {
+ {
+   id: 'g4',
+   type: MediaType.IMAGE,
+   url: 'https://ministrypass-prod.s3.amazonaws.com/uploads/2019/04/please-silence-your-mobile-device-minimalist_title-slide-1.jpg',
+   duration: 10000,
+   title: 'please silence your mobile device',
+   description: 'reminder for attendees.',
+   source: 'ministry pass',
+   hideNewsBar: true
+ }
   //   id: 'g2',
   //   type: MediaType.IMAGE,
   //   url: 'https://d1dncmkdpaif79.cloudfront.net/public/dev.hamitay@gmail.com/image/Masjid%20parking%20area.png',
