@@ -36,9 +36,9 @@ export const GALLERY_IMAGES: SlideItem[] = [
    id: 'g4',
    type: MediaType.IMAGE,
    url: 'https://d1dncmkdpaif79.cloudfront.net/public/dev.hamitay@gmail.com/image/Masjid%20parking%20area.png',
-   duration: 10000,
-   title: 'please silence your mobile device',
-   description: 'reminder for attendees.',
+   duration: 15000,
+   title: '',
+   description: '',
    source: 'ministry pass',
    hideNewsBar: false
  }

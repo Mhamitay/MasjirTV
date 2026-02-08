@@ -91,7 +91,7 @@ const NewsTicker: React.FC<NewsTickerProps> = ({ news, scrollSpeed = 20 }) => {
   return (
     <div className="h-full bg-slate-900 flex items-center overflow-hidden relative border-t border-white/10">
       {/* Category Label */}
-      <div className={`flex-shrink-0 ${config.bg} h-full flex items-center px-12 z-20 shadow-[10px_0_30px_rgba(0,0,0,0.5)] transition-colors duration-1000 min-w-[340px] justify-center relative`}>
+      <div className={`flex-shrink-0 ${config.bg} h-full flex items-center px-12 z-20 shadow-[10px_0_30px_rgba(0,0,0,0.5)] transition-colors duration-1000 min-w-[280px] justify-center relative`}>
         {activeCategory === 'PRAYER' && (
           <div className="absolute top-4 right-4 flex items-center gap-2">
             <div className="w-2 h-2 rounded-full bg-red-500 animate-ping" />
@@ -153,11 +153,11 @@ const Clock: React.FC = () => {
   return (
     <div className="flex flex-col items-end justify-center">
       <div className="flex items-baseline gap-2">
-        <span className="text-white font-black text-6xl leading-none tabular-nums tracking-tighter">
+        <span className="text-white font-black text-[45px] leading-none tabular-nums tracking-tighter">
           {time.getHours().toString().padStart(2, '0')}
         </span>
-        <span className="text-white/30 font-black text-5xl leading-none animate-pulse">:</span>
-        <span className="text-white font-black text-6xl leading-none tabular-nums tracking-tighter">
+        <span className="text-white/30 font-black text-[38px] leading-none animate-pulse">:</span>
+        <span className="text-white font-black text-[45px] leading-none tabular-nums tracking-tighter">
           {time.getMinutes().toString().padStart(2, '0')}
         </span>
       </div>
