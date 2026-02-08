@@ -39,13 +39,13 @@ const App: React.FC = () => {
       duration: 1000,
       source: 'Local',
       component: WelcomeSlide,
-      show: true
+      show: false // Set to false to skip this slide for now
     });
     // Add video slide
     items.push({
       id: 'video-slide',
       type: MediaType.CUSTOM_PAGE,
-      duration: 3000, // 30 seconds
+      duration: 13000, // 30 seconds
       source: 'YouTube',
       component: () => <VideoSlide videoUrl="https://www.youtube.com/watch?v=vuBu6QhMPAI" />,
       hideNewsBar: false,
@@ -55,7 +55,7 @@ const App: React.FC = () => {
     items.push({
       id: 'ramadan-iftar-slide',
       type: MediaType.CUSTOM_PAGE,
-      duration: 2000, // 20 seconds
+      duration: 5000, // 20 seconds
       source: 'Local',
       component: () => <RamadanIftarSlide bookings={RAMADAN_IFTAR_BOOKINGS} year={2026} />,
       hideNewsBar: true,
