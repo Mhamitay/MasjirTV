@@ -66,9 +66,9 @@ export const GALLERY_IMAGES: SlideItem[] = [
 
 export const MOCK_NEWS: NewsItem[] = [
   // PRAYER category (3 items)
-  { id: 'n1', text: 'Prayer times adjusted for the coming week. Please check the latest schedule.', category: 'PRAYER' },
-  { id: 'n2', text: 'Jumuah prayer starts at 1:00 PM. Please arrive early to find parking.', category: 'PRAYER' },
-  { id: 'n3', text: 'Taraweeh prayers during Ramadan will be at 9:00 PM every night.', category: 'PRAYER' },
+  //{ id: 'n1', text: 'Prayer times adjusted for the coming week. Please check the latest schedule.', category: 'PRAYER' },
+  //{ id: 'n2', text: 'Jumuah prayer starts at 1:00 PM. Please arrive early to find parking.', category: 'PRAYER' },
+  //{ id: 'n3', text: 'Taraweeh prayers during Ramadan will be at 9:00 PM every night.', category: 'PRAYER' },
   
   // CLASSES category (3 items)
   { id: 'n4', text: 'New educational classes starting this Monday for all ages. Register online.', category: 'CLASSES' },
@@ -83,22 +83,22 @@ export const MOCK_NEWS: NewsItem[] = [
   // RAMADAN category (3 items)
   { id: 'n10', text: 'Ramadan 2026 preparations are underway. Volunteer opportunities available.', category: 'RAMADAN' },
   { id: 'n11', text: 'Iftar sponsorship available for all days of Ramadan. Contact the office.', category: 'RAMADAN' },
-  { id: 'n12', text: 'Ramadan night programs include Quran recitation and spiritual lectures.', category: 'RAMADAN' },
+  // { id: 'n12', text: 'Ramadan night programs include Quran recitation and spiritual lectures.', category: 'RAMADAN' },
   
   // ZAKAT category (3 items)
-  { id: 'n13', text: 'Zakat collection for local families in need. Donate today to help our community.', category: 'ZAKAT' },
-  { id: 'n14', text: 'Calculate your Zakat online using our new Zakat calculator tool.', category: 'ZAKAT' },
-  { id: 'n15', text: 'Zakat al-Fitr due before Eid prayer. Amount is $12 per person this year.', category: 'ZAKAT' },
+  // { id: 'n13', text: 'Zakat collection for local families in need. Donate today to help our community.', category: 'ZAKAT' },
+  // { id: 'n14', text: 'Calculate your Zakat online using our new Zakat calculator tool.', category: 'ZAKAT' },
+  // { id: 'n15', text: 'Zakat al-Fitr due before Eid prayer. Amount is $12 per person this year.', category: 'ZAKAT' },
   
   // MASJID category (3 items)
-  { id: 'n16', text: 'Support Your Masjid: Contribute to our monthly rent of $15,000. Set up a recurring donation today.', category: 'MASJID' },
+  { id: 'n16', text: 'Support Your Masjid: Contribute to our monthly rent by Setting up a recurring donation today.', category: 'MASJID' },
   { id: 'n17', text: 'Sponsor an Iftar Day! Earn immense rewards by feeding fasting brothers and sisters.', category: 'MASJID' },
-  { id: 'n18', text: 'Masjid expansion project launched. Help us build a bigger prayer hall for our growing community.', category: 'MASJID' },
+  // { id: 'n18', text: 'Masjid expansion project launched. Help us build a bigger prayer hall for our growing community.', category: 'MASJID' },
   
   // DEFAULT category (3 items)
   { id: 'n19', text: 'Please make sure to follow the parking rules and park only in designated areas.', category: 'DEFAULT' },
-  { id: 'n20', text: 'Weekly maintenance scheduled for Sunday at 12:00 AM. Systems may be offline.', category: 'DEFAULT' },
-  { id: 'n21', text: 'Lost and found items available at the front desk. Please check for your belongings.', category: 'DEFAULT' },
+  // { id: 'n20', text: 'Weekly maintenance scheduled for Sunday at 12:00 AM. Systems may be offline.', category: 'DEFAULT' },
+  // { id: 'n21', text: 'Lost and found items available at the front desk. Please check for your belongings.', category: 'DEFAULT' },
 ];
 
 // Ramadan Iftar Bookings .. In a real app, this would come from an API/database
