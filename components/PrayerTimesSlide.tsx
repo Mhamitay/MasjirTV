@@ -322,7 +322,7 @@ const PrayerTimesSlide: React.FC<PrayerTimesSlideProps> = ({ data, showSilenceMe
         </svg>
       </div>
 
-      <header className="text-center mb-2 relative z-10">
+      <header className="text-center mb-2 mt-4 relative z-10">
         <h1 className="text-[#2d5f4f] text-4xl font-black tracking-tight">Prayer Times</h1>
       </header>
 
