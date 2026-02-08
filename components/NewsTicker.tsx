@@ -73,10 +73,10 @@ const NewsTicker: React.FC<NewsTickerProps> = ({ news, scrollSpeed = 20 }) => {
   // Calculate scroll duration based on total character count
   const scrollDuration = useMemo(() => {
     const totalChars = activeItems.reduce((sum, item) => sum + item.text.length, 0);
-    // More generous formula: 0.8 seconds per character for comfortable reading
-    // Add significant buffer for spacing between items (10 seconds per item)
-    const duration = (totalChars * 0.8) + (activeItems.length * 10);
-    return Math.max(60, Math.min(120, duration)); // Between 60-120 seconds
+    // Faster formula: 0.3 seconds per character for quicker reading
+    // Add buffer for spacing between items (3 seconds per item)
+    const duration = (totalChars * 0.3) + (activeItems.length * 3);
+    return Math.max(30, Math.min(90, duration)); // Between 30-90 seconds
   }, [activeItems]);
 
   useEffect(() => {
