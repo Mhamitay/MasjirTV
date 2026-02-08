@@ -19,7 +19,7 @@ const RamadanIftarSlide: React.FC<RamadanIftarSlideProps> = ({ bookings = [], ye
   };
 
   return (
-    <div className="w-full h-full bg-[#c8dbd4] flex flex-col items-center justify-center p-8 pt-12 relative overflow-hidden">
+    <div className="w-full h-full bg-[#c8dbd4] flex flex-col items-center justify-center p-4 pt-6 relative overflow-hidden">
       {/* Islamic Mandala Pattern - Top Right */}
       <div className="absolute -top-20 -right-20 w-96 h-96 opacity-50">
         <svg viewBox="0 0 200 200" className="w-full h-full drop-shadow-2xl">
@@ -76,20 +76,20 @@ const RamadanIftarSlide: React.FC<RamadanIftarSlideProps> = ({ bookings = [], ye
       </div>
 
       {/* Header */}
-      <div className="text-center mb-4 relative z-10">
-        <h1 className="text-[#2d5f4f] text-5xl font-extrabold tracking-wide mb-3">
+      <div className="text-center mb-2 relative z-10">
+        <h1 className="text-[#2d5f4f] text-3xl font-extrabold tracking-wide mb-2">
           Ramadan Iftar Calendar {year}
         </h1>
-        <div className="bg-white/90 rounded-2xl px-6 py-3 inline-block shadow-2xl">
-          <p className="text-[#c99456] text-xl font-bold italic mb-0.5">
+        <div className="bg-white/90 rounded-xl px-4 py-2 inline-block shadow-2xl">
+          <p className="text-[#c99456] text-base font-bold italic mb-0.5">
             "Whoever feeds a fasting person will have a reward like his"
           </p>
-          <p className="text-[#2d5f4f]/70 text-base font-semibold">- Prophet Muhammad ﷺ</p>
+          <p className="text-[#2d5f4f]/70 text-sm font-semibold">- Prophet Muhammad ﷺ</p>
         </div>
       </div>
 
       {/* Calendar Grid - 6 rows x 5 columns */}
-      <div className="grid grid-cols-6 gap-3 w-full max-w-[90%] relative z-10">
+      <div className="grid grid-cols-6 gap-2 w-full max-w-[90%] relative z-10">
         {days.map((day) => {
           const booking = getBookingForDay(day);
           const isBooked = booking && booking.sponsors.length > 0;
@@ -99,13 +99,13 @@ const RamadanIftarSlide: React.FC<RamadanIftarSlideProps> = ({ bookings = [], ye
               key={day}
               className={`${
                 isBooked ? 'bg-[#4a8577]/60' : 'bg-white/80'
-              } rounded-2xl p-3 flex flex-col items-center justify-between shadow-xl transition-all hover:scale-105 min-h-[105px]`}
+              } rounded-xl p-2 flex flex-col items-center justify-between shadow-xl transition-all hover:scale-105 min-h-[80px]`}
             >
               {/* Day Number */}
               <div className={`${
-                isBooked ? 'bg-[#4a8577]/50 w-8 h-8' : 'bg-[#2d5f4f] shadow-lg w-10 h-10'
-              } rounded-full flex items-center justify-center mb-2`}>
-                <span className={`text-white ${isBooked ? 'text-sm' : 'text-lg'} font-black`}>
+                isBooked ? 'bg-[#4a8577]/50 w-7 h-7' : 'bg-[#2d5f4f] shadow-lg w-8 h-8'
+              } rounded-full flex items-center justify-center mb-1`}>
+                <span className={`text-white ${isBooked ? 'text-xs' : 'text-sm'} font-black`}>
                   {day}
                 </span>
               </div>
@@ -114,20 +114,20 @@ const RamadanIftarSlide: React.FC<RamadanIftarSlideProps> = ({ bookings = [], ye
               {isBooked ? (
                 <div className="text-center flex-1 flex flex-col justify-center">
                   {booking.sponsors.slice(0, 3).map((sponsor, idx) => (
-                    <div key={idx} className="text-white text-xs font-bold leading-tight mb-1 drop-shadow">
+                    <div key={idx} className="text-white text-[10px] font-bold leading-tight mb-0.5 drop-shadow">
                       {sponsor}
                     </div>
                   ))}
                   {booking.sponsors.length > 3 && (
-                    <div className="text-white/90 text-[10px] font-semibold bg-[#c99456]/40 rounded-full px-2 py-0.5 mt-0.5">
+                    <div className="text-white/90 text-[9px] font-semibold bg-[#c99456]/40 rounded-full px-1.5 py-0.5 mt-0.5">
                       +{booking.sponsors.length - 3} more
                     </div>
                   )}
                 </div>
               ) : (
                 <div className="text-center flex-1 flex flex-col justify-center">
-                  <div className="text-[#2d5f4f] text-sm font-black mb-0.5">Available</div>
-                  <div className="text-[#c99456] text-xs font-bold bg-[#c99456]/10 rounded-full px-2 py-0.5">
+                  <div className="text-[#2d5f4f] text-xs font-black mb-0.5">Available</div>
+                  <div className="text-[#c99456] text-[10px] font-bold bg-[#c99456]/10 rounded-full px-1.5 py-0.5">
                     Book Now!
                   </div>
                 </div>
@@ -138,8 +138,8 @@ const RamadanIftarSlide: React.FC<RamadanIftarSlideProps> = ({ bookings = [], ye
       </div>
 
       {/* Footer Message */}
-      <div className="mt-4 text-center relative z-10 bg-white/60 rounded-2xl px-6 py-2 shadow-lg">
-        <p className="text-[#2d5f4f] text-base font-bold">
+      <div className="mt-2 text-center relative z-10 bg-white/60 rounded-xl px-4 py-1.5 shadow-lg">
+        <p className="text-[#2d5f4f] text-sm font-bold">
           Contact the masjid to sponsor an Iftar • Earn endless rewards this blessed month
         </p>
       </div>
