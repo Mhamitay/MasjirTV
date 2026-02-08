@@ -322,25 +322,12 @@ const PrayerTimesSlide: React.FC<PrayerTimesSlideProps> = ({ data, showSilenceMe
         </svg>
       </div>
 
-      <header className="text-center mb-2 mt-6 relative z-10">
-        <h1 className="text-[#2d5f4f] text-4xl font-black tracking-tight">Prayer Times</h1>
+      <header className="text-center mb-4 mt-6 relative z-10">
+        <h1 className="text-[#2d5f4f] text-5xl font-black tracking-tight">Prayer Times</h1>
       </header>
 
       {/* Prayer Times Table */}
       <div className="w-full max-w-3xl relative z-10 mb-2">
-        {/* Header Row */}
-        <div className="grid grid-cols-[2fr_1fr_1fr] gap-3 mb-2 px-3">
-          <div>
-            <span className="text-[#2d5f4f] text-xl font-bold uppercase tracking-wider">Athan</span>
-          </div>
-          <div className="text-center">
-            <span className="text-[#2d5f4f] text-xl font-bold uppercase tracking-wider">Adan</span>
-          </div>
-          <div className="text-center">
-            <span className="text-[#2d5f4f] text-xl font-bold uppercase tracking-wider">Iqama</span>
-          </div>
-        </div>
-
         {/* Prayer Rows */}
         <div className="space-y-3">
           {prayerRows.map((prayer, index) => (
