@@ -47,7 +47,7 @@ const App: React.FC = () => {
       type: MediaType.CUSTOM_PAGE,
       duration: 25000, // 30 seconds
       source: 'YouTube',
-      component: () => <VideoSlide videoUrl="https://www.youtube.com/watch?v=bI8DKh2h8kY" />,
+      component: () => <VideoSlide videoUrl="https://www.youtube.com/watch?v=TpT8b8JFZ6E" />,
       hideNewsBar: false,
       show: true
     });
