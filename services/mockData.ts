@@ -78,17 +78,5 @@ export const MOCK_NEWS: NewsItem[] = [
 
 // Ramadan Iftar Bookings .. In a real app, this would come from an API/database
 export const RAMADAN_IFTAR_BOOKINGS = [
-  { day: 1, sponsors: ['Ahmed Family', 'Fatima Khan'] },
-  { day: 2, sponsors: ['Omar Brothers'] },
-  { day: 5, sponsors: ['Aisha Community', 'Bilal Group'] },
-  { day: 7, sponsors: ['Yusuf Family'] },
-  { day: 10, sponsors: ['Khadija Sisters', 'Hassan Corporation'] },
-  { day: 12, sponsors: ['Ibrahim Family'] },
-  { day: 15, sponsors: ['Maryam Foundation', 'Zayd Group', 'Ali Family'] },
-  { day: 18, sponsors: ['Hafsa Community'] },
-  { day: 20, sponsors: ['Umar Family', 'Salma Group'] },
-  { day: 22, sponsors: ['Zainab Foundation'] },
-  { day: 25, sponsors: ['Abdullah Brothers', 'Ruqayyah Sisters'] },
-  { day: 27, sponsors: ['Community Collective', 'Laylat al-Qadr Fund'] },
-  { day: 29, sponsors: ['Eid Preparation Team'] },
+  { day: 27, sponsors: ['Ahmed'] },
 ];
