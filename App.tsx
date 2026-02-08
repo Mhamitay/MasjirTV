@@ -79,7 +79,13 @@ const App: React.FC = () => {
     // Add rest of the gallery
     items.push(...GALLERY_IMAGES);
     // Filter out slides where show is explicitly false
-    return items.filter(item => item.show !== false);
+    const filteredItems = items.filter(item => item.show !== false);
+    // Sort slides: hideNewsBar: false (or undefined) first, then hideNewsBar: true
+    return filteredItems.sort((a, b) => {
+      const aHidesBar = a.hideNewsBar === true ? 1 : 0;
+      const bHidesBar = b.hideNewsBar === true ? 1 : 0;
+      return aHidesBar - bHidesBar;
+    });
   }, [prayerData]);
 
   // Listen for slide changes and update news bar visibility
