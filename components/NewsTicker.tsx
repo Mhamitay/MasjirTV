@@ -91,7 +91,7 @@ const NewsTicker: React.FC<NewsTickerProps> = ({ news, scrollSpeed = 20 }) => {
   return (
     <div className="h-full bg-slate-900 flex items-center overflow-hidden relative border-t border-white/10">
       {/* Category Label */}
-      <div className={`flex-shrink-0 ${config.bg} h-full flex items-center px-12 z-20 shadow-[10px_0_30px_rgba(0,0,0,0.5)] transition-colors duration-1000 min-w-[280px] justify-center relative`}>
+      <div className={`flex-shrink-0 ${config.bg} h-full flex items-center px-12 z-20 shadow-[10px_0_30px_rgba(0,0,0,0.5)] transition-colors duration-1000 min-w-[240px] justify-center relative`}>
         {activeCategory === 'PRAYER' && (
           <div className="absolute top-4 right-4 flex items-center gap-2">
             <div className="w-2 h-2 rounded-full bg-red-500 animate-ping" />
@@ -162,7 +162,7 @@ const Clock: React.FC = () => {
         </span>
       </div>
       <div className="mt-1">
-        <span className="text-emerald-500 font-black text-sm tracking-[0.25em] uppercase">
+        <span className="text-emerald-500 font-black text-base tracking-[0.25em] uppercase">
           {time.toLocaleDateString([], { weekday: 'short', month: 'short', day: 'numeric' })}
         </span>
       </div>

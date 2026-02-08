@@ -21,7 +21,8 @@ export const GALLERY_IMAGES: SlideItem[] = [
     title: 'Sample Image',
     description: 'This is a test slide with overlays.',
     source: '',
-     hideNewsBar: false
+     hideNewsBar: false,
+     show: true
   },//,
   // {
   //   id: 'g1',
@@ -40,7 +41,8 @@ export const GALLERY_IMAGES: SlideItem[] = [
    title: '',
    description: '',
    source: 'ministry pass',
-   hideNewsBar: false
+   hideNewsBar: false,
+   show: true
  }
   //   id: 'g2',
   //   type: MediaType.IMAGE,

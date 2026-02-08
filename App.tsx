@@ -29,7 +29,8 @@ const App: React.FC = () => {
       duration: 2000, // Show for 5 seconds
       source: prayerData ? 'CICSW Live' : 'Calgary Template',
       data: prayerData || CALGARY_PRAYER_SCHEDULE,
-      hideNewsBar: true
+      hideNewsBar: true,
+      show: true
     });
     // Add custom React slides
     items.push({
@@ -37,7 +38,8 @@ const App: React.FC = () => {
       type: MediaType.CUSTOM_PAGE,
       duration: 1000,
       source: 'Local',
-      component: WelcomeSlide
+      component: WelcomeSlide,
+      show: true
     });
     // Add video slide
     items.push({
@@ -46,7 +48,8 @@ const App: React.FC = () => {
       duration: 3000, // 30 seconds
       source: 'YouTube',
       component: () => <VideoSlide videoUrl="https://www.youtube.com/watch?v=vuBu6QhMPAI" />,
-      hideNewsBar: false
+      hideNewsBar: false,
+      show: true
     });
     // Add Ramadan Iftar booking slide
     items.push({
@@ -55,7 +58,8 @@ const App: React.FC = () => {
       duration: 2000, // 20 seconds
       source: 'Local',
       component: () => <RamadanIftarSlide bookings={RAMADAN_IFTAR_BOOKINGS} year={2026} />,
-      hideNewsBar: true
+      hideNewsBar: true,
+      show: true
     });
     // items.push({
     //   id: 'booking-slide',
@@ -74,7 +78,8 @@ const App: React.FC = () => {
     // });
     // Add rest of the gallery
     items.push(...GALLERY_IMAGES);
-    return items;
+    // Filter out slides where show is explicitly false
+    return items.filter(item => item.show !== false);
   }, [prayerData]);
 
   // Listen for slide changes and update news bar visibility
