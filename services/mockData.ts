@@ -22,7 +22,8 @@ export const GALLERY_IMAGES: SlideItem[] = [
     description: '.',
     source: '',
      hideNewsBar: false,
-     show: true
+     show: true,
+     order: 4  // This image will show fourth
   },//,
   // {
   //   id: 'g1',
@@ -42,7 +43,8 @@ export const GALLERY_IMAGES: SlideItem[] = [
    description: '',
    source: 'ministry pass',
    hideNewsBar: false,
-   show: true
+   show: true,
+   order: 5  // This image will show fifth
  }
   //   id: 'g2',
   //   type: MediaType.IMAGE,

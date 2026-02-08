@@ -30,7 +30,8 @@ const App: React.FC = () => {
       source: prayerData ? 'CICSW Live' : 'Calgary Template',
       data: prayerData || CALGARY_PRAYER_SCHEDULE,
       hideNewsBar: true,
-      show: true
+      show: true,
+      order: 2  // This slide will show second
     });
     // Add custom React slides
     items.push({
@@ -49,7 +50,8 @@ const App: React.FC = () => {
       source: 'YouTube',
       component: () => <VideoSlide videoUrl="https://www.youtube.com/watch?v=TpT8b8JFZ6E" />,
       hideNewsBar: false,
-      show: true
+      show: true,
+      order: 1  // This video will show first
     });
     // Add Ramadan Iftar booking slide
     items.push({
@@ -59,7 +61,8 @@ const App: React.FC = () => {
       source: 'Local',
       component: () => <RamadanIftarSlide bookings={RAMADAN_IFTAR_BOOKINGS} year={2026} />,
       hideNewsBar: true,
-      show: true
+      show: true,
+      order: 3  // This page will show third
     });
     // items.push({
     //   id: 'booking-slide',
@@ -80,8 +83,18 @@ const App: React.FC = () => {
     items.push(...GALLERY_IMAGES);
     // Filter out slides where show is explicitly false
     const filteredItems = items.filter(item => item.show !== false);
-    // Sort slides: hideNewsBar: false (or undefined) first, then hideNewsBar: true
+    // Sort slides by:
+    // 1. Manual order property (if set)
+    // 2. hideNewsBar: false (or undefined) first, then hideNewsBar: true
     return filteredItems.sort((a, b) => {
+      // If both have order, sort by order
+      if (a.order !== undefined && b.order !== undefined) {
+        return a.order - b.order;
+      }
+      // If only one has order, it comes first
+      if (a.order !== undefined) return -1;
+      if (b.order !== undefined) return 1;
+      // Otherwise, sort by hideNewsBar
       const aHidesBar = a.hideNewsBar === true ? 1 : 0;
       const bHidesBar = b.hideNewsBar === true ? 1 : 0;
       return aHidesBar - bHidesBar;

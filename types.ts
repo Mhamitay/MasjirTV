@@ -33,6 +33,7 @@ export interface SlideItem {
   component?: React.ComponentType<any>; // For custom React pages
   hideNewsBar?: boolean; // Optional: hide news bar when this slide is active
   show?: boolean; // Optional: if false, slide will be skipped (default: true)
+  order?: number; // Optional: manual sort order (lower numbers appear first)
 }
 
 export interface NewsItem {
