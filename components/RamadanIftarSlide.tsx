@@ -102,17 +102,20 @@ const RamadanIftarSlide: React.FC<RamadanIftarSlideProps> = ({ bookings = [], ye
               } rounded-xl p-2 flex flex-col items-center justify-between shadow-xl transition-all hover:scale-105 min-h-[80px]`}
             >
               {/* Day Number */}
-              <div className={`${
-                isBooked ? 'bg-[#4a8577]/50 w-7 h-7' : 'bg-[#2d5f4f] shadow-lg w-8 h-8'
-              } rounded-full flex items-center justify-center mb-1`}>
-                <span className={`text-white ${isBooked ? 'text-xs' : 'text-sm'} font-black`}>
-                  {day}
-                </span>
-              </div>
+              {!isBooked && (
+                <div className="bg-[#2d5f4f] shadow-lg w-8 h-8 rounded-full flex items-center justify-center mb-1">
+                  <span className="text-white text-sm font-black">
+                    {day}
+                  </span>
+                </div>
+              )}
 
               {/* Booking Status */}
               {isBooked ? (
                 <div className="text-center flex-1 flex flex-col justify-center">
+                  <div className="text-white text-sm font-black mb-1 drop-shadow">
+                    Booked
+                  </div>
                   {booking.sponsors.slice(0, 3).map((sponsor, idx) => (
                     <div key={idx} className="text-white text-sm font-bold leading-tight mb-0.5 drop-shadow">
                       {sponsor}
