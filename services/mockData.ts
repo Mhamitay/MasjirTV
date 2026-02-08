@@ -17,7 +17,7 @@ export const GALLERY_IMAGES: SlideItem[] = [
     id: 'sample-image',
     type: MediaType.IMAGE,
     url: 'https://d1dncmkdpaif79.cloudfront.net/public/dev.hamitay@gmail.com/image/donation4.gif',
-    duration: 20000,
+    duration: 30000,
     title: '',
     description: '.',
     source: '',
@@ -38,7 +38,7 @@ export const GALLERY_IMAGES: SlideItem[] = [
    id: 'g4',
    type: MediaType.IMAGE,
    url: 'https://d1dncmkdpaif79.cloudfront.net/public/dev.hamitay@gmail.com/image/Masjid%20parking%20area.png',
-   duration: 20000,
+   duration: 30000,
    title: '',
    description: '',
    source: 'ministry pass',
@@ -73,18 +73,18 @@ export const MOCK_NEWS: NewsItem[] = [
   //{ id: 'n3', text: 'Taraweeh prayers during Ramadan will be at 9:00 PM every night.', category: 'PRAYER' },
   
   // CLASSES category (3 items)
-  { id: 'n4', text: 'New educational classes starting this Monday for all ages. Register online.', category: 'CLASSES' },
-  { id: 'n5', text: 'Arabic language course for beginners begins next week. Limited seats available.', category: 'CLASSES' },
-  { id: 'n6', text: 'Weekend Islamic studies program for youth registration now open.', category: 'CLASSES' },
+  // { id: 'n4', text: 'New educational classes starting this Monday for all ages. Register online.', category: 'CLASSES' },
+  // { id: 'n5', text: 'Arabic language course for beginners begins next week. Limited seats available.', category: 'CLASSES' },
+  // { id: 'n6', text: 'Weekend Islamic studies program for youth registration now open.', category: 'CLASSES' },
   
   // COMMUNITY category (3 items)
-  { id: 'n7', text: 'Annual community meeting moved to Hall B at 7 PM tonight.', category: 'COMMUNITY' },
-  { id: 'n8', text: 'Community iftar dinner this Saturday at 6:30 PM. All families welcome.', category: 'COMMUNITY' },
+  // { id: 'n7', text: 'Annual community meeting moved to Hall B at 7 PM tonight.', category: 'COMMUNITY' },
+  { id: 'n8', text: 'Al Azhar your center, Where we build a stronger community, together', category: 'COMMUNITY' },
   { id: 'n9', text: 'Volunteer opportunities available for community outreach programs.', category: 'COMMUNITY' },
   
   // RAMADAN category (3 items)
   { id: 'n10', text: 'Ramadan 2026 preparations are underway. Volunteer opportunities available.', category: 'RAMADAN' },
-  { id: 'n11', text: 'Iftar sponsorship available for all days of Ramadan. Contact the office.', category: 'RAMADAN' },
+  { id: 'n11', text: 'Sponsor an Iftar Day! Earn immense rewards by feeding fasting brothers and sisters. Contact the office.', category: 'RAMADAN' },
   // { id: 'n12', text: 'Ramadan night programs include Quran recitation and spiritual lectures.', category: 'RAMADAN' },
   
   // ZAKAT category (3 items)
@@ -93,12 +93,13 @@ export const MOCK_NEWS: NewsItem[] = [
   // { id: 'n15', text: 'Zakat al-Fitr due before Eid prayer. Amount is $12 per person this year.', category: 'ZAKAT' },
   
   // MASJID category (3 items)
-  { id: 'n16', text: 'Support Your Masjid: Contribute to our monthly rent by Setting up a recurring donation today.', category: 'MASJID' },
-  { id: 'n17', text: 'Sponsor an Iftar Day! Earn immense rewards by feeding fasting brothers and sisters.', category: 'MASJID' },
+  { id: 'n16', text: 'Support Your Masjid: Contribute to the monthly rent by Setting up a recurring donation today.', category: 'MASJID' },
+   { id: 'n19', text: 'Please make sure to follow the parking rules and park only in designated areas.', category: 'MASJID' },
+
+  // { id: 'n17', text: 'Sponsor an Iftar Day! Earn immense rewards by feeding fasting brothers and sisters.', category: 'MASJID' },
   // { id: 'n18', text: 'Masjid expansion project launched. Help us build a bigger prayer hall for our growing community.', category: 'MASJID' },
   
   // DEFAULT category (3 items)
-  { id: 'n19', text: 'Please make sure to follow the parking rules and park only in designated areas.', category: 'DEFAULT' },
   // { id: 'n20', text: 'Weekly maintenance scheduled for Sunday at 12:00 AM. Systems may be offline.', category: 'DEFAULT' },
   // { id: 'n21', text: 'Lost and found items available at the front desk. Please check for your belongings.', category: 'DEFAULT' },
 ];
