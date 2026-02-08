@@ -17,7 +17,7 @@ export const GALLERY_IMAGES: SlideItem[] = [
     id: 'sample-image',
     type: MediaType.IMAGE,
     url: 'https://d1dncmkdpaif79.cloudfront.net/public/dev.hamitay@gmail.com/image/donation11.gif',
-    duration: 8000,
+    duration: 1000,
     title: 'Sample Image',
     description: 'This is a test slide with overlays.',
     source: '',
@@ -35,12 +35,12 @@ export const GALLERY_IMAGES: SlideItem[] = [
  {
    id: 'g4',
    type: MediaType.IMAGE,
-   url: 'https://ministrypass-prod.s3.amazonaws.com/uploads/2019/04/please-silence-your-mobile-device-minimalist_title-slide-1.jpg',
+   url: 'https://d1dncmkdpaif79.cloudfront.net/public/dev.hamitay@gmail.com/image/Masjid%20parking%20area.png',
    duration: 10000,
    title: 'please silence your mobile device',
    description: 'reminder for attendees.',
    source: 'ministry pass',
-   hideNewsBar: true
+   hideNewsBar: false
  }
   //   id: 'g2',
   //   type: MediaType.IMAGE,

@@ -26,7 +26,7 @@ const App: React.FC = () => {
       id: 'prayer-slide',
       type: MediaType.PRAYER_TABLE,
       url: 'custom://prayer-table',
-      duration: 25000, // Show for 5 seconds
+      duration: 2000, // Show for 5 seconds
       source: prayerData ? 'CICSW Live' : 'Calgary Template',
       data: prayerData || CALGARY_PRAYER_SCHEDULE,
       hideNewsBar: true
@@ -52,7 +52,7 @@ const App: React.FC = () => {
     items.push({
       id: 'ramadan-iftar-slide',
       type: MediaType.CUSTOM_PAGE,
-      duration: 20000, // 20 seconds
+      duration: 2000, // 20 seconds
       source: 'Local',
       component: () => <RamadanIftarSlide bookings={RAMADAN_IFTAR_BOOKINGS} year={2026} />,
       hideNewsBar: true
