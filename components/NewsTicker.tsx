@@ -100,7 +100,7 @@ const NewsTicker: React.FC<NewsTickerProps> = ({ news, scrollSpeed = 20 }) => {
       {/* Scrolling Text Container */}
       <div className="relative flex-grow overflow-hidden h-full flex items-center bg-black/40">
         <div 
-          key={activeCategory} // Force re-animation on category change
+          key={activeCategory} // Force re-animation on category changeasdf
           className="animate-marquee whitespace-nowrap flex items-center" 
           style={{ animationDuration: '60s' }}
         >
