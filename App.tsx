@@ -26,7 +26,7 @@ const App: React.FC = () => {
       id: 'prayer-slide',
       type: MediaType.PRAYER_TABLE,
       url: 'custom://prayer-table',
-      duration: 15000, // Show for 5 seconds
+      duration: 25000, // Show for 5 seconds
       source: prayerData ? 'CICSW Live' : 'Calgary Template',
       data: prayerData || CALGARY_PRAYER_SCHEDULE,
       hideNewsBar: true
