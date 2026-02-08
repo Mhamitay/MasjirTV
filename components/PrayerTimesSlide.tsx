@@ -322,7 +322,7 @@ const PrayerTimesSlide: React.FC<PrayerTimesSlideProps> = ({ data, showSilenceMe
         </svg>
       </div>
 
-      <header className="text-center mb-4 mt-6 relative z-10">
+      <header className="text-center mb-6 mt-6 relative z-10">
         <h1 className="text-[#2d5f4f] text-5xl font-black tracking-tight">Prayer Times</h1>
       </header>
 
@@ -341,7 +341,7 @@ const PrayerTimesSlide: React.FC<PrayerTimesSlideProps> = ({ data, showSilenceMe
                 {/* Prayer Name and Icon */}
                 <div className="flex items-center gap-4">
                   <div className="w-14 h-14 flex-shrink-0">{prayer.icon}</div>
-                  <span className="text-white text-3xl font-bold tracking-tight">{prayer.name}</span>
+                  <span className="text-white text-4xl font-bold tracking-tight">{prayer.name}</span>
                 </div>
                 
                 {/* Adan Time */}
