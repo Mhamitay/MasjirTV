@@ -153,16 +153,16 @@ const Clock: React.FC = () => {
   return (
     <div className="flex flex-col items-end justify-center">
       <div className="flex items-baseline gap-2">
-        <span className="text-white font-black text-[45px] leading-none tabular-nums tracking-tighter">
+        <span className="text-white font-black text-[36px] leading-none tabular-nums tracking-tighter">
           {time.getHours().toString().padStart(2, '0')}
         </span>
-        <span className="text-white/30 font-black text-[38px] leading-none animate-pulse">:</span>
-        <span className="text-white font-black text-[45px] leading-none tabular-nums tracking-tighter">
+        <span className="text-white/30 font-black text-[30px] leading-none animate-pulse">:</span>
+        <span className="text-white font-black text-[36px] leading-none tabular-nums tracking-tighter">
           {time.getMinutes().toString().padStart(2, '0')}
         </span>
       </div>
       <div className="mt-1">
-        <span className="text-emerald-500 font-black text-base tracking-[0.25em] uppercase">
+        <span className="text-emerald-500 font-black text-lg tracking-[0.25em] uppercase">
           {time.toLocaleDateString([], { weekday: 'short', month: 'short', day: 'numeric' })}
         </span>
       </div>
