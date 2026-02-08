@@ -3,25 +3,39 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=1920, initial-scale=1.0">
     <title>SignageView Pro</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
+        * {
+            box-sizing: border-box;
+        }
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
         body {
             font-family: 'Inter', sans-serif;
             background-color: #000;
             margin: 0;
-            overflow: hidden; /* Prevent scrolling on TV 333333*/
+            overflow: hidden; /* Prevent scrolling on TV */
+        }
+        #root {
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
         }
         @keyframes marquee {
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
         }
         .animate-marquee {
-            /* Adjusted default   speed to be slightly faster */
+            /* Adjusted default speed to be slightly faster */
             animation: marquee 25s linear infinite;
         }
         .slide-fade-enter {

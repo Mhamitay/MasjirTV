@@ -70,14 +70,23 @@ const NewsTicker: React.FC<NewsTickerProps> = ({ news, scrollSpeed = 20 }) => {
   const config = CATEGORY_CONFIG[activeCategory] || CATEGORY_CONFIG['DEFAULT'];
   const activeItems = groupedNews[activeCategory] || [];
 
+  // Calculate scroll duration based on total character count
+  const scrollDuration = useMemo(() => {
+    const totalChars = activeItems.reduce((sum, item) => sum + item.text.length, 0);
+    // More generous formula: 0.8 seconds per character for comfortable reading
+    // Add significant buffer for spacing between items (10 seconds per item)
+    const duration = (totalChars * 0.8) + (activeItems.length * 10);
+    return Math.max(60, Math.min(120, duration)); // Between 60-120 seconds
+  }, [activeItems]);
+
   useEffect(() => {
     if (categories.length <= 1) return;
-    // Faster category switching: 18 seconds instead of 25
+    // Category switches after scroll completes to ensure all items are visible
     const interval = setInterval(() => {
       setCurrentCategoryIndex((prev) => (prev + 1) % categories.length);
-    }, 18000); 
+    }, scrollDuration * 1000); 
     return () => clearInterval(interval);
-  }, [categories.length]);
+  }, [categories.length, scrollDuration]);
 
   return (
     <div className="h-full bg-slate-900 flex items-center overflow-hidden relative border-t border-white/10">
@@ -102,7 +111,7 @@ const NewsTicker: React.FC<NewsTickerProps> = ({ news, scrollSpeed = 20 }) => {
         <div 
           key={activeCategory} // Force re-animation on category changeasdf
           className="animate-marquee whitespace-nowrap flex items-center" 
-          style={{ animationDuration: '60s' }}
+          style={{ animationDuration: `${scrollDuration}s` }}
         >
           {/* First set of items */}
           {activeItems.map((item) => (
