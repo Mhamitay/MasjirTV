@@ -322,7 +322,7 @@ const PrayerTimesSlide: React.FC<PrayerTimesSlideProps> = ({ data, showSilenceMe
         </svg>
       </div>
 
-      <header className="text-center mb-2 mt-4 relative z-10">
+      <header className="text-center mb-2 mt-6 relative z-10">
         <h1 className="text-[#2d5f4f] text-4xl font-black tracking-tight">Prayer Times</h1>
       </header>
 
@@ -354,20 +354,20 @@ const PrayerTimesSlide: React.FC<PrayerTimesSlideProps> = ({ data, showSilenceMe
                 {/* Prayer Name and Icon */}
                 <div className="flex items-center gap-4">
                   <div className="w-14 h-14 flex-shrink-0">{prayer.icon}</div>
-                  <span className="text-white text-2xl font-bold tracking-tight">{prayer.name}</span>
+                  <span className="text-white text-3xl font-bold tracking-tight">{prayer.name}</span>
                 </div>
                 
                 {/* Adan Time */}
-                <div className="bg-white/20 rounded-lg px-4 py-3 text-center">
-                  <span className="text-white text-3xl font-black tracking-tighter tabular-nums">
+                <div className="bg-white/20 rounded-lg px-5 py-4">
+                  <span className="text-white text-4xl font-black tracking-tighter tabular-nums">
                     {prayer.adhan}
                   </span>
                 </div>
                 
                 {/* Iqama Time */}
                 {prayer.iqama ? (
-                  <div className="bg-white/30 rounded-lg px-4 py-3 text-center">
-                    <span className="text-white text-3xl font-black tracking-tighter tabular-nums">
+                  <div className="bg-white/30 rounded-lg px-5 py-4">
+                    <span className="text-white text-4xl font-black tracking-tighter tabular-nums">
                       {prayer.iqama}
                     </span>
                   </div>
