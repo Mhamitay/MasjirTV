@@ -132,7 +132,7 @@ const App: React.FC = () => {
       {/* Main content area, always fills screen */}
       <div
         className="absolute top-0 left-0 w-full transition-all duration-700"
-        style={{ height: newsBarVisible ? 'calc(100vh - 120px)' : '100vh', bottom: newsBarVisible ? '120px' : '0' }}
+        style={{ height: newsBarVisible ? 'calc(100vh - 78px)' : '100vh', bottom: newsBarVisible ? '78px' : '0' }}
       >
         <SlideCarousel
           items={allMediaItems}
@@ -143,7 +143,7 @@ const App: React.FC = () => {
 
       {/* News bar slides down/up, overlays bottom */}
       <footer
-        className={`absolute left-0 w-full h-[120px] z-50 transition-transform duration-700 ${newsBarVisible ? 'translate-y-0' : 'translate-y-full'}`}
+        className={`absolute left-0 w-full h-[78px] z-50 transition-transform duration-700 ${newsBarVisible ? 'translate-y-0' : 'translate-y-full'}`}
         style={{ bottom: 0 }}
       >
         <NewsTicker news={newsItems} scrollSpeed={20} />
