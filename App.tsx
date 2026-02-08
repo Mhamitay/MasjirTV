@@ -54,7 +54,8 @@ const App: React.FC = () => {
       type: MediaType.CUSTOM_PAGE,
       duration: 20000, // 20 seconds
       source: 'Local',
-      component: () => <RamadanIftarSlide bookings={RAMADAN_IFTAR_BOOKINGS} year={2026} />
+      component: () => <RamadanIftarSlide bookings={RAMADAN_IFTAR_BOOKINGS} year={2026} />,
+      hideNewsBar: true
     });
     // items.push({
     //   id: 'booking-slide',
