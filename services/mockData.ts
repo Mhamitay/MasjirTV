@@ -59,8 +59,8 @@ export const GALLERY_IMAGES: SlideItem[] = [
   //   duration: 8000,
   //   title: 'Modern Architecture',
   //   description: 'Our new facility extension.',
-  //   source: 'Cloud Assets'
-  // }asdf 
+  //   source: 'Cloud Assets'fff
+  // }
 ];
 
 export const MOCK_NEWS: NewsItem[] = [
