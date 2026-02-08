@@ -79,7 +79,7 @@ export const MOCK_NEWS: NewsItem[] = [
   
   // COMMUNITY category (3 items)
   // { id: 'n7', text: 'Annual community meeting moved to Hall B at 7 PM tonight.', category: 'COMMUNITY' },
-  { id: 'n8', text: 'Al Azhar your center, Where we build a stronger community, together', category: 'COMMUNITY' },
+  { id: 'n8', text: 'Al Azhar youth center, Where we build a stronger community, together', category: 'COMMUNITY' },
   { id: 'n9', text: 'Volunteer opportunities available for community outreach programs.', category: 'COMMUNITY' },
   
   // RAMADAN category (3 items)

@@ -113,7 +113,7 @@ const RamadanIftarSlide: React.FC<RamadanIftarSlideProps> = ({ bookings = [], ye
               {/* Booking Status */}
               {isBooked ? (
                 <div className="text-center flex-1 flex flex-col justify-center">
-                  <div className="text-white text-sm font-black mb-1 drop-shadow">
+                  <div className="text-gray-700 text-sm font-black mb-1 drop-shadow">
                     Booked
                   </div>
                   {booking.sponsors.slice(0, 3).map((sponsor, idx) => (
