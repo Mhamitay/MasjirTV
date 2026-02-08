@@ -80,11 +80,11 @@ const RamadanIftarSlide: React.FC<RamadanIftarSlideProps> = ({ bookings = [], ye
         <h1 className="text-[#2d5f4f] text-3xl font-extrabold tracking-wide mb-2">
           Ramadan Iftar Calendar {year}
         </h1>
-        <div className="bg-white/90 rounded-xl px-4 py-2 inline-block shadow-2xl">
-          <p className="text-[#c99456] text-xl font-bold italic mb-0.5">
+        <div className="bg-white/90 rounded-xl px-6 py-3 inline-block shadow-2xl">
+          <p className="text-[#c99456] text-2xl font-bold italic mb-1">
             "Whoever feeds a fasting person will have a reward like his"
           </p>
-          <p className="text-[#2d5f4f]/70 text-base font-semibold">- Prophet Muhammad ﷺ</p>
+          <p className="text-[#2d5f4f]/70 text-lg font-semibold">- Prophet Muhammad ﷺ</p>
         </div>
       </div>
 

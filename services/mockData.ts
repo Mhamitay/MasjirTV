@@ -16,7 +16,7 @@ export const GALLERY_IMAGES: SlideItem[] = [
   {
     id: 'sample-image',
     type: MediaType.IMAGE,
-    url: 'https://d1dncmkdpaif79.cloudfront.net/public/dev.hamitay@gmail.com/image/donation3.gif',
+    url: 'https://d1dncmkdpaif79.cloudfront.net/public/dev.hamitay@gmail.com/image/donation4.gif',
     duration: 20000,
     title: 'Sample Image',
     description: 'This is a test slide with overlays.',
