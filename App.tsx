@@ -26,7 +26,7 @@ const App: React.FC = () => {
       id: 'prayer-slide',
       type: MediaType.PRAYER_TABLE,
       url: 'custom://prayer-table',
-      duration: 2000, // Show for 5 seconds
+      duration: 25000, // Show for 5 seconds
       source: prayerData ? 'CICSW Live' : 'Calgary Template',
       data: prayerData || CALGARY_PRAYER_SCHEDULE,
       hideNewsBar: true,
@@ -45,7 +45,7 @@ const App: React.FC = () => {
     items.push({
       id: 'video-slide',
       type: MediaType.CUSTOM_PAGE,
-      duration: 13000, // 30 seconds
+      duration: 25000, // 30 seconds
       source: 'YouTube',
       component: () => <VideoSlide videoUrl="https://www.youtube.com/watch?v=vuBu6QhMPAI" />,
       hideNewsBar: false,
@@ -55,7 +55,7 @@ const App: React.FC = () => {
     items.push({
       id: 'ramadan-iftar-slide',
       type: MediaType.CUSTOM_PAGE,
-      duration: 5000, // 20 seconds
+      duration: 25000, // 20 seconds
       source: 'Local',
       component: () => <RamadanIftarSlide bookings={RAMADAN_IFTAR_BOOKINGS} year={2026} />,
       hideNewsBar: true,
