@@ -331,7 +331,9 @@ const PrayerTimesSlide: React.FC<PrayerTimesSlideProps> = ({ data, showSilenceMe
       <div className="w-full max-w-3xl relative z-10 mb-4">
         {/* Header Row */}
         <div className="grid grid-cols-[2fr_1fr_1fr] gap-4 mb-3 px-4">
-          <div></div>
+          <div>
+            <span className="text-[#2d5f4f] text-xl font-bold uppercase tracking-wider">Athan</span>
+          </div>
           <div className="text-center">
             <span className="text-[#2d5f4f] text-xl font-bold uppercase tracking-wider">Adan</span>
           </div>
