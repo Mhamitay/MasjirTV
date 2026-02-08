@@ -125,21 +125,6 @@ const PrayerTimesSlide: React.FC<PrayerTimesSlideProps> = ({ data, showSilenceMe
       )
     },
     { 
-      name: 'Sunrise', 
-      ...getPrayerTimes(data.sunrise),
-      icon: (
-        <svg viewBox="0 0 100 100" className="w-16 h-16" fill="none" stroke="white" strokeWidth="4" strokeLinecap="round">
-          <circle cx="50" cy="45" r="15" fill="white"/>
-          <line x1="50" y1="20" x2="50" y2="10"/>
-          <line x1="73" y1="27" x2="80" y2="20"/>
-          <line x1="80" y1="45" x2="90" y2="45"/>
-          <line x1="27" y1="27" x2="20" y2="20"/>
-          <line x1="20" y1="45" x2="10" y2="45"/>
-          <line x1="10" y1="70" x2="90" y2="70" strokeWidth="3"/>
-        </svg>
-      )
-    },
-    { 
       name: 'Dhuhr', 
       ...getPrayerTimes(data.dhuhr),
       icon: (
@@ -342,41 +327,56 @@ const PrayerTimesSlide: React.FC<PrayerTimesSlideProps> = ({ data, showSilenceMe
         <p className="text-[#2d5f4f]/70 text-lg font-semibold tracking-wide">Al Azhar Youth Centre</p>
       </header>
 
-      <div className="grid grid-cols-3 gap-4 w-full max-w-6xl relative z-10 mb-3">
-        {prayerRows.map((prayer, index) => (
-          <div 
-            key={prayer.name}
-            className={`${
-              index < 3 ? 'bg-[#4a8577]' : index === 3 ? 'bg-[#c99456]' : 'bg-[#4a8577]'
-            } rounded-2xl p-4 flex flex-col items-center justify-center shadow-xl transition-transform hover:scale-105`}
-          >
-            <div className="mb-2">{prayer.icon}</div>
-            <span className="text-white text-2xl font-bold tracking-tight mb-3">{prayer.name}</span>
-            
-            {/* Side by Side Times */}
-            <div className="w-full flex gap-2">
-              {/* Adhan Time */}
-              <div className="flex-1 bg-white/20 rounded-xl px-3 py-2 flex flex-col items-center">
-                <span className="text-white/80 text-xs font-medium mb-1">ADHAN</span>
-                <span className="text-white text-2xl font-black tracking-tighter tabular-nums">
-                  {prayer.adhan}
-                </span>
-              </div>
-              
-              {/* Iqama Time */}
-              {prayer.iqama ? (
-                <div className="flex-1 bg-white/30 rounded-xl px-3 py-2 flex flex-col items-center">
-                  <span className="text-white/80 text-xs font-medium mb-1">IQAMA</span>
-                  <span className="text-white text-2xl font-black tracking-tighter tabular-nums">
-                    {prayer.iqama}
+      {/* Prayer Times Table */}
+      <div className="w-full max-w-5xl relative z-10 mb-4">
+        {/* Header Row */}
+        <div className="grid grid-cols-[2fr_1fr_1fr] gap-4 mb-3 px-4">
+          <div></div>
+          <div className="text-center">
+            <span className="text-[#2d5f4f] text-xl font-bold uppercase tracking-wider">Adan</span>
+          </div>
+          <div className="text-center">
+            <span className="text-[#2d5f4f] text-xl font-bold uppercase tracking-wider">Iqama</span>
+          </div>
+        </div>
+
+        {/* Prayer Rows */}
+        <div className="space-y-3">
+          {prayerRows.map((prayer, index) => (
+            <div 
+              key={prayer.name}
+              className={`${
+                index === 3 ? 'bg-[#c99456]' : 'bg-[#4a8577]'
+              } rounded-2xl p-5 shadow-xl transition-transform hover:scale-[1.02]`}
+            >
+              <div className="grid grid-cols-[2fr_1fr_1fr] gap-4 items-center">
+                {/* Prayer Name and Icon */}
+                <div className="flex items-center gap-4">
+                  <div className="w-14 h-14 flex-shrink-0">{prayer.icon}</div>
+                  <span className="text-white text-3xl font-bold tracking-tight">{prayer.name}</span>
+                </div>
+                
+                {/* Adan Time */}
+                <div className="bg-white/20 rounded-xl px-4 py-3 text-center">
+                  <span className="text-white text-3xl font-black tracking-tighter tabular-nums">
+                    {prayer.adhan}
                   </span>
                 </div>
-              ) : (
-                <div className="flex-1 opacity-0"></div>
-              )}
+                
+                {/* Iqama Time */}
+                {prayer.iqama ? (
+                  <div className="bg-white/30 rounded-xl px-4 py-3 text-center">
+                    <span className="text-white text-3xl font-black tracking-tighter tabular-nums">
+                      {prayer.iqama}
+                    </span>
+                  </div>
+                ) : (
+                  <div className="opacity-0"></div>
+                )}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
 
       {/* Countdown to Next Prayer */}
