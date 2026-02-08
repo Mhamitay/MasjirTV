@@ -343,24 +343,24 @@ const PrayerTimesSlide: React.FC<PrayerTimesSlideProps> = ({ data, showSilenceMe
         </div>
 
         {/* Prayer Rows */}
-        <div className="space-y-2">
+        <div className="space-y-2.5">
           {prayerRows.map((prayer, index) => (
             <div 
               key={prayer.name}
               className={`${
                 index === 3 ? 'bg-[#c99456]' : 'bg-[#4a8577]'
-              } rounded-xl p-2 shadow-xl transition-transform hover:scale-[1.02]`}
+              } rounded-xl p-3 shadow-xl transition-transform hover:scale-[1.02]`}
             >
               <div className="grid grid-cols-[2fr_1fr_1fr] gap-3 items-center">
                 {/* Prayer Name and Icon */}
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 flex-shrink-0">{prayer.icon}</div>
+                  <div className="w-12 h-12 flex-shrink-0">{prayer.icon}</div>
                   <span className="text-white text-2xl font-bold tracking-tight">{prayer.name}</span>
                 </div>
                 
                 {/* Adan Time */}
                 <div className="bg-white/20 rounded-lg px-3 py-2 text-center">
-                  <span className="text-white text-2xl font-black tracking-tighter tabular-nums">
+                  <span className="text-white text-3xl font-black tracking-tighter tabular-nums">
                     {prayer.adhan}
                   </span>
                 </div>
@@ -368,7 +368,7 @@ const PrayerTimesSlide: React.FC<PrayerTimesSlideProps> = ({ data, showSilenceMe
                 {/* Iqama Time */}
                 {prayer.iqama ? (
                   <div className="bg-white/30 rounded-lg px-3 py-2 text-center">
-                    <span className="text-white text-2xl font-black tracking-tighter tabular-nums">
+                    <span className="text-white text-3xl font-black tracking-tighter tabular-nums">
                       {prayer.iqama}
                     </span>
                   </div>
