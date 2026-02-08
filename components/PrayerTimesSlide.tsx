@@ -382,39 +382,36 @@ const PrayerTimesSlide: React.FC<PrayerTimesSlideProps> = ({ data, showSilenceMe
       </div>
 
       {/* Countdown to Next Prayer */}
-      <div className="bg-white/90 backdrop-blur-sm rounded-xl px-8 py-4 shadow-2xl relative z-10 max-w-3xl mx-auto">
-        <div className="flex items-center justify-between gap-6">
+      <div className="bg-white/90 backdrop-blur-sm rounded-xl px-6 py-3 shadow-2xl relative z-10 max-w-3xl mx-auto">
+        <div className="flex items-center justify-between gap-4">
           <div className="flex flex-col">
-            <span className="text-[#2d5f4f]/70 text-sm font-semibold uppercase tracking-wider mb-1">
+            <span className="text-[#2d5f4f]/70 text-xs font-semibold uppercase tracking-wider mb-1">
               {countdown.isIqama ? 'Iqama In' : 'Next Adhan'}
             </span>
-            <span className="text-[#2d5f4f] text-3xl font-black tracking-tight">
+            <span className="text-[#2d5f4f] text-2xl font-black tracking-tight">
               {countdown.name}
-              {countdown.isIqama && <span className="text-xl font-semibold ml-2">at {countdown.time}</span>}
+              {countdown.isIqama && <span className="text-lg font-semibold ml-2">at {countdown.time}</span>}
             </span>
           </div>
           
           <div className="flex items-center gap-3">
             {/* Hours */}
             <div className={`${countdown.isIqama ? 'bg-[#c99456]' : 'bg-[#4a8577]'} rounded-lg px-4 py-3 min-w-[70px] text-center shadow-lg transition-colors`}>
-              <div className="text-white text-3xl font-black tabular-nums leading-none">{String(countdown.hours).padStart(2, '0')}</div>
-              <div className="text-white/80 text-xs font-medium uppercase mt-1">Hours</div>
+              <div className="text-white text-4xl font-black tabular-nums leading-none">{String(countdown.hours).padStart(2, '0')}</div>
             </div>
             
             <span className="text-[#2d5f4f] text-4xl font-black">:</span>
             
             {/* Minutes */}
             <div className={`${countdown.isIqama ? 'bg-[#c99456]' : 'bg-[#4a8577]'} rounded-lg px-4 py-3 min-w-[70px] text-center shadow-lg transition-colors`}>
-              <div className="text-white text-3xl font-black tabular-nums leading-none">{String(countdown.minutes).padStart(2, '0')}</div>
-              <div className="text-white/80 text-xs font-medium uppercase mt-1">Minutes</div>
+              <div className="text-white text-4xl font-black tabular-nums leading-none">{String(countdown.minutes).padStart(2, '0')}</div>
             </div>
             
-            <span className="text-[#2d5f4f] text-3xl font-black">:</span>
+            <span className="text-[#2d5f4f] text-4xl font-black">:</span>
             
             {/* Seconds */}
             <div className={`${countdown.isIqama ? 'bg-[#d4493e]' : 'bg-[#c99456]'} rounded-lg px-4 py-3 min-w-[70px] text-center shadow-lg transition-colors`}>
-              <div className="text-white text-3xl font-black tabular-nums leading-none">{String(countdown.seconds).padStart(2, '0')}</div>
-              <div className="text-white/80 text-xs font-medium uppercase mt-1">Seconds</div>
+              <div className="text-white text-4xl font-black tabular-nums leading-none">{String(countdown.seconds).padStart(2, '0')}</div>
             </div>
           </div>
         </div>
